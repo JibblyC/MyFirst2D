@@ -5,8 +5,9 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
 
     public float moveSpeed;
+	public bool canMove;
 	private float activeMoveSpeed;
-    private Rigidbody2D myRigidbody;
+    public Rigidbody2D myRigidbody;
 
     public float jumpSpeed;
 
@@ -44,6 +45,7 @@ public class PlayerController : MonoBehaviour {
         respawnPosition = transform.position;
 
 		activeMoveSpeed = moveSpeed;
+		canMove = true;
 		
 	}
 	
@@ -53,7 +55,7 @@ public class PlayerController : MonoBehaviour {
 		isGrounded = Physics2D.OverlapCircle (groundCheck.position, groundCheckRadius, whatIsGround);
 		myAnim = GetComponent<Animator> ();
 
-		if (knockBackCounter <= 0) {
+		if (knockBackCounter <= 0 && canMove) {
 
 			if (onPlatform) {
 				activeMoveSpeed = moveSpeed * onPlatformSpeedModifier;

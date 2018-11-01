@@ -155,6 +155,14 @@ MonoBehaviour:
     m_Bits: 256
   isGrounded: 0
   respawnPosition: {x: 0, y: 0, z: 0}
+  theLevelManager: {fileID: 0}
+  stompBox: {fileID: 0}
+  knockBackForce: 0
+  knockBackLength: 0
+  invincibilityLength: 0
+  jumpSound: {fileID: 0}
+  hurtSound: {fileID: 0}
+  onPlatformSpeedModifier: 0
 --- !u!212 &212749780358419414
 SpriteRenderer:
   m_ObjectHideFlags: 1
